@@ -12,5 +12,5 @@ jargon_score = 100 * (1 - num_of_uncommon_words / total_words - num_of_rare_word
 ```
 
 ### Credits
-Original Jargon Project: https://scienceandpublic.com/, https://github.com/NoamAndRoy/JargonProject \\
+Original Jargon Project: https://scienceandpublic.com/, https://github.com/NoamAndRoy/JargonProject <br />
 cmwxyz: https://github.com/cmwxyz/word-rarity
