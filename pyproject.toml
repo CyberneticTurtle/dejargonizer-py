@@ -1,0 +1,36 @@
+[build-system]
+requires = [
+    "setuptools>=65.4.0",
+    "setuptools-scm"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jargon-project"
+description = "Calculate the jargon score of input text"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT License"}
+classifiers = [
+    'Programming Language :: Python :: 3',
+]
+authors = [{name = "Cybernetic Turtle", email = "cybernetic@crissaegrim.xyz"}]
+dependencies = [
+    "numpy>=1.23.4",
+    "pandas>=1.5.0",
+    "clean-text[gpl]>=0.6.0"
+]
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/CyberneticTurtle/jargon-project-py"
+"Bug Tracker" = "https://github.com/CyberneticTurtle/jargon-project-py/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "jargon_project.__version__.__VERSION__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+jargon_project = ["*.csv"]
