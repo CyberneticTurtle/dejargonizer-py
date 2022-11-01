@@ -133,6 +133,27 @@ def rare_finder(token_df, min_count, max_count):
     return rare_words[["word", "token_count"]]
 
 
+def get_jargon_percent(input_text, min_count=0, max_count=80):
+    """
+    Return percentage of jargon words (between min_count and max_count) in input text.
+
+    Args:
+        input_text: Input text
+        min_count: Minimum count for rare word in jargon corpus. Default 0
+        max_count: Maximum count for rare word in jargon corpus. Default 80
+    
+    Returns:
+        Percentage of jargon words in input text
+    """
+    cleaned_input_text = clean_input_text(input_text)
+    tokens = tokenize(cleaned_input_text)
+    token_values = fetch_rarity(tokens)
+    total_words = token_values["token_count"].sum()
+
+    rare_words = rare_finder(token_values, min_count, max_count - 1)
+    return rare_words["token_count"].sum() * 100 / total_words
+
+
 def get_jargon_words(input_text, min_count=0, max_count=80):
     """
     Return jargon words (between min_count and max_count) in input text.
