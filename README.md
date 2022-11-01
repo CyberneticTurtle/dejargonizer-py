@@ -11,3 +11,6 @@ calculated by the following formula:
 jargon_score = 100 * (1 - num_of_uncommon_words / total_words - num_of_rare_words / total_words)
 ```
 
+### Credits
+Original Jargon Project: https://scienceandpublic.com/, https://github.com/NoamAndRoy/JargonProject \\
+cmwxyz: https://github.com/cmwxyz/word-rarity
