@@ -124,8 +124,7 @@ def rare_finder(token_df, min_count, max_count):
     Returns:
         Pandas DataFrame with columns "word" and "token_count" of rare words in input text
     """
-    # For a word to be rare, it either has to be within the top and bottom indices or it has a
-    # count of 0
+    # For a word to be rare, it has to be within the min and max counts 
     rare_words = token_df[
         (token_df["count"] >= min_count) & (token_df["count"] <= max_count)
     ]
